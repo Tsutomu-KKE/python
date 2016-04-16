@@ -12,6 +12,6 @@ RUN apt-get update --fix-missing && apt-get install -y --no-install-recommends \
     wget -q --no-check-certificate \
             https://repo.continuum.io/miniconda/$MINICONDA && \
     bash /$MINICONDA -b -p /opt/conda && \
-    #find /opt -name __pycache__ | xargs rm -r && \
+    find /opt -name __pycache__ | xargs rm -r && \
     rm -rf /var/lib/apt/lists/* /$MINICONDA /root/.c* /opt/conda/pkgs/*
 CMD ["/bin/bash"]
