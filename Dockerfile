@@ -23,6 +23,7 @@ RUN export uid=1000 gid=1000 pswd=scientist && \
     wget -q --no-check-certificate \
             https://repo.continuum.io/miniconda/$MINICONDA && \
     bash /$MINICONDA -b -p /opt/conda && \
+    conda update -y --all && \
     find /opt -name __pycache__ | xargs rm -r && \
     chown ${uid}:${gid} -R $HOME /opt/conda && \
     rm -rf /var/lib/apt/lists/* /$MINICONDA /root/.c* $HOME/.c* /opt/conda/pkgs/*
